@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test2</title>
+</head>
+<body>
+
+<script>
+const article = document.querySelector('article');
+
+var requestURL = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=%E9%8A%80%E6%B2%B3%E9%89%84%E9%81%93%E3%81%AE%E5%A4%9C&author=%E5%AE%AE%E6%B2%A2%E8%B3%A2%E6%B2%BB&publisherName=%E6%96%B0%E6%BD%AE%E7%A4%BE&applicationId=1051004596913573416';
+var request = new XMLHttpRequest();
+request.open('GET',requestURL)
+
+request.resuponseType = 'json';
+request.send();
+
+request.onload = function() {
+    var Books = request.response;
+    showBooks(Books);
+}
+
+function showBooks(jsonObj) {
+    var books = JSON.parse(jsonObj)['Items']; // 修正10/25
+    
+    for (var i = 0; i < books.length; i++) { // 修正10/25
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var myP1 = document.createElement('p');
+        var myP2 = document.createElement('p');
+        
+        myH2.textContent = books[i]['Item'].title; // 修正10/25
+        myP1.textContent = 'author:' + books[i]['Item'].author; // 修正10/25
+        myP2.textContent = 'publisher:' + books[i]['Item'].publisherName; // 修正10/25
+        
+        myH2.insertAdjacentHTML('beforebegin', 'あああ');
+        
+        document.write(books[i]['Item'].title + "<br>\n"); // 修正10/25
+        document.write(books[i]['Item'].author + "<br>\n");
+        document.write(books[i]['Item'].publisherName + "<br>\n");
+
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myP1);
+        myArticle.appendChild(myP2);
+        
+        article.appendChild(myArticle);
+    }
+}
+</script>
+</body>
+</html>

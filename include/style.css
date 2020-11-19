@@ -1,0 +1,116 @@
+#popupRoom {
+    display: none;  /* 初期表示は非表示 */
+    position: absolute; 
+    left: 30%;
+    top: 10%;
+    width: 40%;
+    height: 400px;
+    background-color: #cccccc;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000000;
+    box-shadow:1px 1px 1px #555;
+}
+.Rooms {
+    width: 80px;
+    height: 50px;
+    background-color: royalblue;
+    border-radius: 5px;
+}
+.Rooms2 {
+    width: 80px;
+    height: 50px;
+    background-color: lightsteelblue;
+    border-radius: 5px;
+}
+#chatMessage {
+  width: 100%;
+  height: 100%;
+}
+
+#msgArea {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 230px;
+  bottom: 50px;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+#chatmsg {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 80%;
+  height: 30px;
+}
+#chatSend {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 80px;
+  height: 30px;
+}
+.mine {
+  position: absolute;
+  right:0px;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 5px 5px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.mine:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e0edff;
+}
+
+.mine p {
+  margin: 0;
+  padding: 0;
+}
+
+.other {
+  position: absolute;
+  left:0px;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 5px 5px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.other:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+
+.other p {
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  width: 100%;
+  height: 30px;
+  margin: 5px 0 5px 15px;
+}
