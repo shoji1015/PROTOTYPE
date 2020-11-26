@@ -114,3 +114,124 @@
   height: 30px;
   margin: 5px 0 5px 15px;
 }
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+}
+
+/* header */
+header{
+    /*z-index: 1;*/
+    /*background-color: transparent;*/
+    background-color: white;
+    width: 100%;
+    padding: 30px 4% 10px;
+    /*position: fixed;*/
+    /*top: 0;*/
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    margin: 0; padding: 0;
+    color: white;
+}
+header h1 a{
+  text-decoration: none;
+  color: black;
+}
+
+header div{
+  margin-left: auto;
+  display: flex;
+}
+
+header nav{
+    margin-left: auto;
+}
+header nav ul{
+    list-style: none;
+    margin: 0;
+    display: flex;
+}
+header nav ul li{
+    margin: 0 0 0 15px;
+    font-size: 15px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+header nav ul li a:hover{
+  text-decoration: underline;
+}
+
+
+/* search */
+th {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+td {
+  background-color: white;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.search_result{
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search_result_box{
+  /*flex-direction: column;*/
+  text-align: center;
+  width: 100px;
+}
+.search_result_box:first-child{
+    flex-direction: column;
+}
+.search_result_box a{
+  text-decoration: none;
+  color: black;
+}
+.search_result_box a:hover{
+  text-decoration: underline;
+}
+
+
+/* home index */
+.indexclass{
+  z-index: 1;
+}
+
+
+/* management */
+/* community */
+/* friend */
+
+
+/* footer */
+footer{
+  background-color: white;
+  text-align: center;
+}
+footer a{
+  text-decoration: none;
+  color: black;
+}
+footer a:hover{
+  text-decoration: underline;
+}

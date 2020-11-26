@@ -1,5 +1,3 @@
-<?php require_once("./header.php"); ?>
-
 <section>
 <?php
 define("APPLICATION_ID",'1051004596913573416');
@@ -33,16 +31,22 @@ if (@count($info) != 0) {
     $dbname = "yuito";
     $link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>No.</th>";
-    echo "<th>画像</th>";
-    echo "<th>タイトル</th>";
-    echo "<th>著者</th>";
-    echo "<th>出版社</th>";
-    echo "<th>ISBN</th>";
-    echo "<th>コメント</th>";
-    echo "</tr>";
+    echo "<h3>".$_POST['search']."の検索結果"."</h3>";
+    
+    // echo "<table>";
+    // echo "<tr>";
+    // echo "<th>No.</th>";
+    // echo "<th>画像</th>";
+    // echo "<th>タイトル</th>";
+    // echo "<th>著者</th>";
+    // echo "<th>出版社</th>";
+    // echo "<th>ISBN</th>";
+    // echo "<th>コメント</th>";
+    // echo "</tr>";
+    
+    // echo "<div class='search_result'>";
+    echo "<ul class='search_result'>";
+    
     foreach ($info as $key => $Items) {
         if ($key == "Items") {
             for ($i = 0; $i < count($Items); $i++) {
@@ -72,24 +76,30 @@ if (@count($info) != 0) {
                         }
                     }
                 }
-                echo "<tr>";
-                echo "<td>" . ($i+1) . "</td>";
-                echo "<td><img src='".$imgURL."'></td>";
-                echo "<td><a href=bookdata.php?isbn=".$isbn.">".$title. "</a></td>";
-                echo "<td>".$author . "</td>";
-                echo "<td>".$manufacuturer . "</td>";
-                echo "<td>".$isbn. "</td>";
-                echo "<td>".$comment . "</td>";
-                echo "</tr>";
+                // echo "<tr>";
+                // echo "<td>" . ($i+1) . "</td>";
+                // echo "<td><img src='".$imgURL."'></td>";
+                // echo "<td><a href=bookdata.php?isbn=".$isbn.">".$title. "</a></td>";
+                // echo "<td>".$author . "</td>";
+                // echo "<td>".$manufacuturer . "</td>";
+                // echo "<td>".$isbn. "</td>";
+                // echo "<td>".$comment . "</td>";
+                // echo "</tr>";
+                
+                echo "<li class='search_result_box'>";
+                    echo "<a href=bookdata.php?isbn=".$isbn."><img src='".$imgURL."'></a>";
+                    echo "<br><a href=bookdata.php?isbn=".$isbn.">".$title."</a>";
+                    echo "<p>".$author."</p>";
+                echo "</li>";
             }
         }
     }
-    echo "</table>";
+    // echo "</table>";
+    echo "</ul>";
+    // echo "</div>";
     mysqli_close($link);
 } else {
     // error
 }
 ?>
 </section>
-
-<?php require_once("./footer.php"); ?>

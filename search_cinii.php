@@ -1,5 +1,3 @@
-<?php require_once("./header.php"); ?>
-
 <section>
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -52,5 +50,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <!--<h3><?php echo $Item['author']; ?></h3>-->
 <!--<h3><?php echo $Item['publisherName']; ?></h3>-->
 <!--<img src="<?php echo $Item['mediumImageUrl']; ?>">-->
-
-<?php require_once("./footer.php"); ?>
