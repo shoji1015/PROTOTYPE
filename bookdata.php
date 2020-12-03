@@ -1,5 +1,4 @@
 <?php require_once("./header.php"); ?>
-
 <section>
 <?php
 $isbn = @$_REQUEST['isbn'];
